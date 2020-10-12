@@ -25,6 +25,7 @@ public class CharacterController : MonoBehaviour
     #endregion
 
     #region Movement Variables
+    private Rigidbody rb;
     [SerializeField]
     private float moveSpeed = 5f;
     private bool isGrounded;
@@ -32,12 +33,7 @@ public class CharacterController : MonoBehaviour
     private float jumpHeight = 1f;
     private Vector3 vJumpHeight;
     #endregion
-
-    private Rigidbody rb;
     
-    
-
-
     #region Unity Callbacks
     // Start is called before the first frame update
     void Start()
@@ -59,6 +55,7 @@ public class CharacterController : MonoBehaviour
     }
     #endregion
 
+    #region Movement Methods
     private void controlCheck()
     {
         if (Input.GetKey(Forward))
@@ -87,7 +84,6 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    #region Movement Methods
     public void Rotate()
     {
         float horizontalRotation = Input.GetAxis("Mouse X");
