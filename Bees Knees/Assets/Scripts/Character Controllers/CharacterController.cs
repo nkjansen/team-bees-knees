@@ -100,25 +100,29 @@ public class CharacterController : MonoBehaviour
 
     private void moveForward()
     {
-        transform.position += transform.forward * Time.deltaTime * moveSpeed;
+        rb.AddForce(vJumpHeight * moveSpeed, ForceMode.Impulse);
+        //transform.position += transform.forward * Time.deltaTime * moveSpeed;
         Debug.Log("Moving Forward!");
     }
 
     private void moveBack()
     {
-        transform.position -= transform.forward * Time.deltaTime * moveSpeed;
+        rb.AddForce(vJumpHeight * moveSpeed, ForceMode.Impulse);
+        //transform.position -= transform.forward * Time.deltaTime * moveSpeed;
         Debug.Log("Moving Backwards!");
     }
 
     private void moveLeft()
     {
-        transform.position -= transform.right * Time.deltaTime * moveSpeed;
+        rb.AddForce(vJumpHeight * moveSpeed, ForceMode.Impulse);
+        //transform.position -= transform.right * Time.deltaTime * moveSpeed;
         Debug.Log("Moving Left!");
     }
 
     private void moveRight()
     {
-        transform.position += transform.right * Time.deltaTime * moveSpeed;
+        rb.AddForce(transform.position * moveSpeed * Time.deltaTime, ForceMode.Impulse);
+        //transform.position += transform.right * Time.deltaTime * moveSpeed;
         Debug.Log("Moving Right!");
     }
 
