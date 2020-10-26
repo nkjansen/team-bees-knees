@@ -4,23 +4,48 @@ using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
 {
+    #region Object Reference Variables
     public CharacterController controller;
     public Transform cam;
+    public GameObject EubieObject;
+    public GameObject DDObject;
+    #endregion
 
+    #region Movement Variables
     public float speed = 1f;
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
+    #endregion
 
-    public GameObject EubieObject;
-    public GameObject DDObject;
-
+    #region Character Switching Values
     private enum Characters
     {
         Eubie,
         DD
     }
+    private Characters currentChar;
+    #endregion
 
-    private Characters currentChar = Characters.Eubie;
+    private void Awake()
+    {
+        #region Initial currentChar value
+        if (EubieObject.activeSelf == true)
+        {
+            currentChar = Characters.Eubie;
+        }
+
+        else if (DDObject.activeSelf == true)
+        {
+            currentChar = Characters.DD;
+        }
+
+        else
+        {
+            EubieObject.SetActive(true);
+            currentChar = Characters.Eubie;
+        }
+        #endregion
+    }
 
     // Update is called once per frame
     void Update()
@@ -33,7 +58,7 @@ public class ThirdPersonMovement : MonoBehaviour
          * turning functionality, while using my own character controller, and have
          * customizable buttons
          */
-
+        #region Character Turning and Movement
         float horizontal = Input.GetAxisRaw("Horizontal");
         //Debug.Log(horizontal);
         float vertical = Input.GetAxisRaw("Vertical");
@@ -49,7 +74,9 @@ public class ThirdPersonMovement : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
+        #endregion
 
+        #region Character Switching
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             switch (currentChar)
@@ -69,5 +96,6 @@ public class ThirdPersonMovement : MonoBehaviour
                     break;
             }
         }
+        #endregion
     }
 }
