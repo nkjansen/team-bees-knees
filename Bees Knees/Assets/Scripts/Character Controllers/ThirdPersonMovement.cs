@@ -25,15 +25,6 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-         * TODO:
-         * Create a custom character controller (again) that allows the use of rigid bodies
-         * The float values used here are just -1, 0, and 1, which I can easily simulate
-         * with the boolean Input.GetKeyDown. This will allow me to keep the camera
-         * turning functionality, while using my own character controller, and have
-         * customizable buttons
-         */
-
         float horizontal = Input.GetAxisRaw("Horizontal");
         //Debug.Log(horizontal);
         float vertical = Input.GetAxisRaw("Vertical");
