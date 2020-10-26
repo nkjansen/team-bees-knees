@@ -11,13 +11,24 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
 
+    public GameObject EubieObject;
+    public GameObject DDObject;
+
+    private enum Characters
+    {
+        Eubie,
+        DD
+    }
+
+    private Characters currentChar = Characters.Eubie;
+
     // Update is called once per frame
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
-        Debug.Log(horizontal);
+        //Debug.Log(horizontal);
         float vertical = Input.GetAxisRaw("Vertical");
-        Debug.Log(vertical);
+        //Debug.Log(vertical);
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
         if(direction.magnitude >= 0.1)
@@ -28,6 +39,26 @@ public class ThirdPersonMovement : MonoBehaviour
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            switch (currentChar)
+            {
+                case Characters.Eubie:
+                    currentChar = Characters.DD;
+                    EubieObject.SetActive(false);
+                    DDObject.SetActive(true);
+                    Debug.Log("Switching to DD!");
+                    break;
+
+                case Characters.DD:
+                    currentChar = Characters.Eubie;
+                    EubieObject.SetActive(true);
+                    DDObject.SetActive(false);
+                    Debug.Log("Switching to Eubie!");
+                    break;
+            }
         }
     }
 }
