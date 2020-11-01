@@ -7,6 +7,6 @@ public class StartScript : MonoBehaviour
 {
     public void PressStart()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Prototyping");
     }
 }
