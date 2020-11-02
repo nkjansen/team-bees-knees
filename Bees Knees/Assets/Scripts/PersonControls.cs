@@ -1,7 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 2957361... Merge branch 'dev-main' of https://github.com/Nate12503/team-bees-knees into dev-main
 ﻿using System.Collections;
 using UnityEngine;
 
@@ -39,6 +42,7 @@ public class PersonControls : MonoBehaviour
         }
     }
 }
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 05196d0... eek
 ﻿using System.Collections;
@@ -121,3 +125,5 @@ public class PersonControls : MonoBehaviour
 =======
 >>>>>>> 634096cfe8486f5a2508becd4859a1a4c4644440
 >>>>>>> parent of 05196d0... eek
+=======
+>>>>>>> parent of 2957361... Merge branch 'dev-main' of https://github.com/Nate12503/team-bees-knees into dev-main
