@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blueberry
+  m_Name: Simplistic_Nature_Material
   m_Shader: {fileID: 4800000, guid: e4eac79bb29ae4484bbca33f32b31535, type: 3}
   m_ShaderKeywords: _DEMO_ON _USETEXTURE_ON
   m_LightmapFlags: 4
