@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: baa9857dfe4a09347ba3473b7e1def5a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - brushTexture: {fileID: 2800000, guid: 24c52cd8b983448409cfcf92a09ccdcf, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
