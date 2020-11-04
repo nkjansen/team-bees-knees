@@ -78,12 +78,12 @@ Material:
     - _NormalStrength: 0.57
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Radius: 4.25
+    - _Radius: 2.39
     - _Rigidness: 1
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 24.6
+    - _Speed: 20
     - _SrcBlend: 1
     - _SwayMax: 0.002
     - _UVSec: 0
