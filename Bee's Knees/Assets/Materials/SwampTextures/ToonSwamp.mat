@@ -40,20 +40,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 4e43558ca1d40ef4696ce6fc2f4375d8, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MaskInt:
-        m_Texture: {fileID: 2800000, guid: 78bb382df58d3534b86f55b511b418ae, type: 3}
-        m_Scale: {x: 5, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
-        m_Texture: {fileID: 2800000, guid: d363cd69dceb94641be372f34199d84f, type: 3}
-        m_Scale: {x: 12.28, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
@@ -68,40 +60,33 @@ Material:
         m_Scale: {x: 6, y: 6}
         m_Offset: {x: 0, y: 0}
     - _SurfaceNoise:
-        m_Texture: {fileID: 2800000, guid: 5ab3d2f89035bfc488f08f8d75a03bf8, type: 3}
-        m_Scale: {x: 20, y: 20}
+        m_Texture: {fileID: 2800000, guid: e182ac5d3b797044fb29f3fa2acc3708, type: 3}
+        m_Scale: {x: 10, y: 10}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _Amount: 0.304
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DepthMaxDistance: 7.98
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Foam: 0.27
     - _FoamDistance: 5.3
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _Height: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Scale: 0.06
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.2
     - _SrcBlend: 1
     - _SurfaceDistortionAmount: 0.102
-    - _SurfaceNoiseCutoff: 0.59
-    - _TextureDistort: 0.153
+    - _SurfaceNoiseCutoff: 0.657
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0.13089037, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DepthGradientDeep: {r: 0, g: 0.6213836, b: 0.6415094, a: 0.749}
     - _DepthGradientShallow: {r: 0.0047169924, g: 0.9688974, b: 1, a: 0.725}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamC: {r: 1, g: 1, b: 1, a: 0.5}
-    - _SurfaceNoiseScroll: {r: 0.001, g: 0.01, b: 0, a: 0}
+    - _SurfaceNoiseScroll: {r: 0.03, g: 0.03, b: 0, a: 0}
