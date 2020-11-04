@@ -18,7 +18,7 @@ RenderSettings:
   m_FogColor: {r: 1, g: 0.7855216, b: 0.41037738, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.015
-  m_LinearFogStart: 51.4
+  m_LinearFogStart: 53.29
   m_LinearFogEnd: 276.3
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
@@ -4472,6 +4472,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35a8f809c75f0346a2c8b21c7dfdb2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  jumpForce: 0
+  gravityScale: 0
+  controller: {fileID: 0}
 --- !u!114 &2127476780595225144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10252,6 +10256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b60a9f89d68e448b8a556749c9596d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 4023820361160227988}
+  respawnPoint: {fileID: 5931820659723008321}
 --- !u!1 &5931820660605663439
 GameObject:
   m_ObjectHideFlags: 0
