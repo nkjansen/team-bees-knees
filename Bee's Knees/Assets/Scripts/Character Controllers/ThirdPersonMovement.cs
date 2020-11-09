@@ -6,7 +6,6 @@ public class ThirdPersonMovement : MonoBehaviour
 {
     #region Object Reference Variables
     public CharacterController controller;
-    public BKCharacterController BKController;
     public Transform cam;
     public GameObject EubieObject;
     public GameObject DDObject;
@@ -14,8 +13,6 @@ public class ThirdPersonMovement : MonoBehaviour
 
     #region Movement Variables
     public float speed = 1f;
-    public float jumpForce = 1f;
-    public float gravityScale = 1f;
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
     #endregion
@@ -27,14 +24,6 @@ public class ThirdPersonMovement : MonoBehaviour
         DD
     }
     private Characters currentChar;
-    #endregion
-
-    #region Jump/Gravity Test Values
-    private Vector3 playerVelocity;
-    private bool groundedPlayer;
-    private float playerSpeed = 2.0f;
-    public float jumpHeight = 5.0f;
-    private float gravityValue = -9.81f * 10f;
     #endregion
 
     private void Awake()
@@ -70,67 +59,25 @@ public class ThirdPersonMovement : MonoBehaviour
          * customizable buttons
          */
         #region Character Turning and Movement
-        /* 
-         float horizontal = BKController.horizontal;
-         float vertical = BKController.vertical;
-         Debug.Log("Horizontal: " + horizontal);
-         Debug.Log("Vertical: " + vertical);*/
-        groundedPlayer = controller.isGrounded;
-        Debug.Log(groundedPlayer);
-        if (groundedPlayer && playerVelocity.y < 0)
-        {
-            playerVelocity.y = 0f;
-        }
-        if (Input.GetButtonDown("Jump") && groundedPlayer)
-        {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-        }
-
-        playerVelocity.y += gravityValue * Time.deltaTime;
-        controller.Move(playerVelocity * Time.deltaTime);
-
         float horizontal = Input.GetAxisRaw("Horizontal");
+        //Debug.Log(horizontal);
         float vertical = Input.GetAxisRaw("Vertical");
-        
-        Vector3 direction = new Vector3(-horizontal, 0f, -vertical).normalized;
-        //BKController.Move(direction * speed * Time.deltaTime);
+        //Debug.Log(vertical);
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        if (direction.magnitude >= 0.1)
+        if(direction.magnitude >= 0.1)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            /*if (controller.isGrounded)
-            {
-                // Jump
-                if (Input.GetButtonDown("Jump"))
-                {
-                    moveDir.y = jumpForce; // Jump
-                }
-                else
-                {
-                    moveDir.y = -1; // Ensures contact with the ground
-                }
-            }
-            else
-            {
-                // Apply Gravity
-                moveDir.y = moveDir.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
-            }*/
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
-            //direction = moveDir;
         }
-        /*else
-        {
-            direction = Vector3.zero;
-        }
-        BKController.Move(direction * speed * Time.deltaTime);*/
         #endregion
 
         #region Character Switching
-        /*if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             switch (currentChar)
             {
@@ -148,24 +95,7 @@ public class ThirdPersonMovement : MonoBehaviour
                     Debug.Log("Switching to Eubie!");
                     break;
             }
-        }*/
-        #endregion
-
-       #region Jump/Gravity Testing
-        /*groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
-        {
-            playerVelocity.y = 0f;
         }
-
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        controller.Move(move * Time.deltaTime * playerSpeed);*/
-
-
-        // Changes the height position of the player..
-        
-        /*
-        BKController.rb.AddForce(playerVelocity * Time.deltaTime);*/
         #endregion
     }
 }
