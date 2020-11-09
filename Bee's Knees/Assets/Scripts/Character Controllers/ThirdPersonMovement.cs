@@ -30,7 +30,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     #region Jump/Gravity Test Values
     private Vector3 playerVelocity;
-    private bool groundedPlayer;
+    private bool notGrounded;
     private float playerSpeed = 2.0f;
     public float jumpHeight = 5.0f;
     private float gravityValue = -9.81f * 10f;
@@ -74,13 +74,13 @@ public class ThirdPersonMovement : MonoBehaviour
          float vertical = BKController.vertical;
          Debug.Log("Horizontal: " + horizontal);
          Debug.Log("Vertical: " + vertical);*/
-        groundedPlayer = controller.isGrounded;
-        Debug.Log(groundedPlayer);
-        if (groundedPlayer && playerVelocity.y < 0)
+        notGrounded = !controller.isGrounded;
+        Debug.Log(notGrounded);
+        if (!notGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
         }
-        if (Input.GetButtonDown("Jump") && groundedPlayer)
+        if (Input.GetButtonDown("Jump") && !notGrounded)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
@@ -129,7 +129,7 @@ public class ThirdPersonMovement : MonoBehaviour
         #endregion
 
         #region Character Switching
-        /*if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             switch (currentChar)
             {
@@ -147,7 +147,7 @@ public class ThirdPersonMovement : MonoBehaviour
                     Debug.Log("Switching to Eubie!");
                     break;
             }
-        }*/
+        }
         #endregion
 
        #region Jump/Gravity Testing
