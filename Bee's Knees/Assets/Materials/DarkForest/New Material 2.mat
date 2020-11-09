@@ -83,5 +83,5 @@ Material:
     - _YOffset: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.501912, g: 0.18431371, b: 1, a: 1}
+    - _Color: {r: 0.32991308, g: 0.18431371, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

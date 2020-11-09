@@ -86,7 +86,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _LightcapAngle: 94
+    - _LightcapAngle: 127
     - _LightcapColors: 0
     - _LightcapPower: 1
     - _Metallic: 0
