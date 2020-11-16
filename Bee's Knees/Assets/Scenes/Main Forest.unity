@@ -17018,7 +17018,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367408177}
-  m_LocalRotation: {x: 0.0037764823, y: -0.9933984, z: 0.10940451, w: 0.034292556}
+  m_LocalRotation: {x: 0.003776486, y: -0.9933984, z: 0.10940452, w: 0.034292594}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -53101,7 +53101,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169762207}
-  m_LocalRotation: {x: 0.004535772, y: -0.9907304, z: 0.13138863, w: 0.034200527}
+  m_LocalRotation: {x: 0.004535771, y: -0.9907304, z: 0.13138863, w: 0.034200527}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -91062,7 +91062,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069982540}
-  m_LocalRotation: {x: 0.003776693, y: -0.9933984, z: 0.109404504, w: 0.034292564}
+  m_LocalRotation: {x: 0.0037767023, y: -0.9933984, z: 0.10940451, w: 0.03429264}
   m_LocalPosition: {x: 2.3101263, y: 2.6500015, z: 33.464203}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -104892,7 +104892,7 @@ GameObject:
   - component: {fileID: 5931820660605663438}
   m_Layer: 0
   m_Name: RespawnTrigger
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
