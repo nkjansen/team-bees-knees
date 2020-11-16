@@ -17,6 +17,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public float gravityScale = 1f;
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
+    private bool onGround;
+    RaycastHit hit;
     #endregion
 
     #region Character Switching Values
@@ -60,6 +62,9 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("onGround: " + IsGrounded());
+        OnGround();
+        Debug.Log(onGround);
         /*
          * TODO:
          * Create a custom character controller (again) that allows the use of rigid bodies
@@ -74,13 +79,13 @@ public class ThirdPersonMovement : MonoBehaviour
          float vertical = BKController.vertical;
          Debug.Log("Horizontal: " + horizontal);
          Debug.Log("Vertical: " + vertical);*/
-        notGrounded = !controller.isGrounded;
-        Debug.Log(notGrounded);
-        if (!notGrounded && playerVelocity.y < 0)
+        //notGrounded = !controller.isGrounded;
+        //Debug.Log(notGrounded);
+        if (onGround && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
         }
-        if (Input.GetButtonDown("Jump") && !notGrounded)
+        if (Input.GetButtonDown("Jump") && onGround)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
@@ -166,5 +171,18 @@ public class ThirdPersonMovement : MonoBehaviour
         /*
         BKController.rb.AddForce(playerVelocity * Time.deltaTime);*/
         #endregion
+    }
+
+    private void OnGround()
+    {
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit, 3.8f) && hit.transform.tag != "Water")
+        {
+            onGround = true;
+        }
+        else
+        {
+            onGround = false;
+        }
+        //return onGround;
     }
 }
