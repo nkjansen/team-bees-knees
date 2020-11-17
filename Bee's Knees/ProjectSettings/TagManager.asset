@@ -6,8 +6,6 @@ TagManager:
   tags:
   - PostProcess
   - Water
-  - Eubie
-  - DD
   layers:
   - Default
   - TransparentFX

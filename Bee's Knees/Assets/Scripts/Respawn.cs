@@ -6,27 +6,18 @@ public class Respawn : MonoBehaviour
 {
     //drop player transform in this slot
     [SerializeField] 
-    private Transform player;
-    //[SerializeField]
-    //private Transform GameObject;
+    private Transform player; 
     //drop respawn point gameobject in this slot
     [SerializeField] 
     private Transform respawnPoint;
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
-        if (GameObject.FindWithTag("Eubie"))
+        if (other.CompareTag("Player"))
         {
             //whenever the player jumps on the water, they will respawn to the respawnPoint
             player.transform.position = respawnPoint.transform.position;
             Physics.SyncTransforms();
         }
-
-        /*if (other.gameObject.tag =="DD")
-        {
-            GameObject.transform.position = GameObject.transform.position;
-        }*/
-
     }
-
 }

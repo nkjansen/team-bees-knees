@@ -62,31 +62,29 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("onGround: " + IsGrounded());
         OnGround();
-        //Debug.Log(onGround);
-        Movement();
-        characterSwitch();
-    }
-
-    private void OnGround()
-    {
-        if (Physics.Raycast(transform.position, -Vector3.up, out hit, 3.8f) && hit.transform.tag != "Water")
-        {
-            onGround = true;
-        }
-        else
-        {
-            onGround = false;
-        }
-    }
-
-    private void Movement()
-    {
+        Debug.Log(onGround);
+        /*
+         * TODO:
+         * Create a custom character controller (again) that allows the use of rigid bodies
+         * The float values used here are just -1, 0, and 1, which I can easily simulate
+         * with the boolean Input.GetKeyDown. This will allow me to keep the camera
+         * turning functionality, while using my own character controller, and have
+         * customizable buttons
+         */
+        #region Character Turning and Movement
+        /* 
+         float horizontal = BKController.horizontal;
+         float vertical = BKController.vertical;
+         Debug.Log("Horizontal: " + horizontal);
+         Debug.Log("Vertical: " + vertical);*/
+        //notGrounded = !controller.isGrounded;
+        //Debug.Log(notGrounded);
         if (onGround && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
         }
-
         if (Input.GetButtonDown("Jump") && onGround)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
@@ -97,8 +95,9 @@ public class ThirdPersonMovement : MonoBehaviour
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-
+        
         Vector3 direction = new Vector3(-horizontal, 0f, -vertical).normalized;
+        //BKController.Move(direction * speed * Time.deltaTime);
 
         if (direction.magnitude >= 0.1)
         {
@@ -107,13 +106,34 @@ public class ThirdPersonMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-
+            /*if (controller.isGrounded)
+            {
+                // Jump
+                if (Input.GetButtonDown("Jump"))
+                {
+                    moveDir.y = jumpForce; // Jump
+                }
+                else
+                {
+                    moveDir.y = -1; // Ensures contact with the ground
+                }
+            }
+            else
+            {
+                // Apply Gravity
+                moveDir.y = moveDir.y + (Physics.gravity.y * gravityScale * Time.deltaTime);
+            }*/
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            //direction = moveDir;
         }
-    }
+        /*else
+        {
+            direction = Vector3.zero;
+        }
+        BKController.Move(direction * speed * Time.deltaTime);*/
+        #endregion
 
-    private void characterSwitch()
-    {
+        #region Character Switching
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             switch (currentChar)
@@ -133,6 +153,36 @@ public class ThirdPersonMovement : MonoBehaviour
                     break;
             }
         }
+        #endregion
+
+       #region Jump/Gravity Testing
+        /*groundedPlayer = controller.isGrounded;
+        if (groundedPlayer && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0f;
+        }
+
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        controller.Move(move * Time.deltaTime * playerSpeed);*/
+
+
+        // Changes the height position of the player..
+        
+        /*
+        BKController.rb.AddForce(playerVelocity * Time.deltaTime);*/
+        #endregion
     }
 
+    private void OnGround()
+    {
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit, 3.8f) && hit.transform.tag != "Water")
+        {
+            onGround = true;
+        }
+        else
+        {
+            onGround = false;
+        }
+        //return onGround;
+    }
 }
