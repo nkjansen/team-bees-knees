@@ -53423,7 +53423,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169762207}
-  m_LocalRotation: {x: 0.004535771, y: -0.9907304, z: 0.13138863, w: 0.034200527}
+  m_LocalRotation: {x: 0.004535772, y: -0.9907304, z: 0.13138863, w: 0.034200527}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -100578,13 +100578,28 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3290407502544617998}
+  - component: {fileID: 3290407502544618000}
   m_Layer: 0
   m_Name: Eubie Model
-  m_TagString: Untagged
+  m_TagString: Eubie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!136 &3290407502544618000
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3290407502544617999}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 4.52
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.92, z: 0}
 --- !u!136 &3290407502943298595
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -100626,7 +100641,7 @@ GameObject:
   - component: {fileID: 3290407502943298595}
   m_Layer: 0
   m_Name: DD Model
-  m_TagString: Untagged
+  m_TagString: DD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108770,7 +108785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &8064935911336034618
 GameObject:
   m_ObjectHideFlags: 0
