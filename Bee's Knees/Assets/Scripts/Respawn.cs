@@ -13,7 +13,7 @@ public class Respawn : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (GameObject.FindWithTag("Eubie"))
         {
             //whenever the player jumps on the water, they will respawn to the respawnPoint
             player.transform.position = respawnPoint.transform.position;
