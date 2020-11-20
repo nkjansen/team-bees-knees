@@ -9,6 +9,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public Transform cam;
     public GameObject EubieObject;
     public GameObject DDObject;
+    public Animator anim, Duckanim;
     #endregion
 
     #region Movement Variables
@@ -17,6 +18,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public float gravityScale = 1f;
     public float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
+    private float horizontal;
+    private float vertical;
     private bool onGround;
     RaycastHit hit;
     #endregion
@@ -95,6 +98,23 @@ public class ThirdPersonMovement : MonoBehaviour
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+
+        anim.SetFloat("horizontal", horizontal);
+        anim.SetFloat("vertical", vertical);
+        Duckanim.SetFloat("horizontal", horizontal);
+        Duckanim.SetFloat("vertical", vertical);
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            anim.SetBool("jump", true);
+            Duckanim.SetBool("jump", true);
+
+        }
+        else
+        {
+            anim.SetBool("jump", false);
+            Duckanim.SetBool("jump", false);
+        }
         
         Vector3 direction = new Vector3(-horizontal, 0f, -vertical).normalized;
         //BKController.Move(direction * speed * Time.deltaTime);

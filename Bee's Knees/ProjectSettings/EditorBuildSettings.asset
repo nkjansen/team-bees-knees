@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Forest.unity
     guid: e519b39a99eaa934f87afcc93b42b48e
   - enabled: 1
-    path: Assets/Scenes/Dark Forest.unity
-    guid: 386c009d61df7c640951583ce613578f
+    path: Assets/Scenes/MushroomCave.unity
+    guid: ac323ab9d98449244925b876e97cef26
   m_configObjects: {}
