@@ -1526,6 +1526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  Scene: Main Forest
 --- !u!33 &1732842961457794442
 MeshFilter:
   m_ObjectHideFlags: 0
