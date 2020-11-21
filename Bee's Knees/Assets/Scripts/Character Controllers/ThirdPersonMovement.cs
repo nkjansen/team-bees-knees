@@ -195,6 +195,7 @@ public class ThirdPersonMovement : MonoBehaviour
                     Debug.Log("Switching to Eubie!");
                     break;
             }
+
         }
         #endregion
 
