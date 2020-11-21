@@ -98,7 +98,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-
+        //floats for animator
         anim.SetFloat("horizontal", horizontal);
         anim.SetFloat("vertical", vertical);
         Duckanim.SetFloat("horizontal", horizontal);
@@ -106,6 +106,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
+            //Makes Eubie&DD Jump
             anim.SetBool("jump", true);
             Duckanim.SetBool("jump", true);
 
@@ -114,6 +115,28 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             anim.SetBool("jump", false);
             Duckanim.SetBool("jump", false);
+        }
+        //Had to manually trigger the animation for forward & left("W & A")
+        if (Input.GetKey(KeyCode.W))
+        {
+            anim.SetBool("forward", true);
+            Duckanim.SetBool("forward", true);
+        }
+        else
+        {
+            anim.SetBool("forward", false);
+            Duckanim.SetBool("forward", false);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            anim.SetBool("left", true);
+            Duckanim.SetBool("left", true);
+        }
+        else
+        {
+            anim.SetBool("left", false);
+            Duckanim.SetBool("left", false);
         }
         
         Vector3 direction = new Vector3(-horizontal, 0f, -vertical).normalized;
