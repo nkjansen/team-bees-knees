@@ -41,6 +41,8 @@ public class ThirdPersonMovement : MonoBehaviour
     private float gravityValue = -9.81f * 10f;
     #endregion
 
+    bool isInDialogue = false;
+
     private void Awake()
     {
         #region Initial currentChar value
@@ -65,6 +67,7 @@ public class ThirdPersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isInDialogue) return;
         //Debug.Log("onGround: " + IsGrounded());
         OnGround();
         Debug.Log(onGround);
@@ -228,5 +231,20 @@ public class ThirdPersonMovement : MonoBehaviour
             onGround = false;
         }
         //return onGround;
+    }
+
+    void Interact()
+    {
+        // Check input
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Check if NPC is active and not already talking
+            if (NPC.ActiveNPC && !isInDialogue)
+            {
+                // Start dialog
+                isInDialogue = true;
+                DialogUI.Instance.Show();
+            }
+        }
     }
 }
