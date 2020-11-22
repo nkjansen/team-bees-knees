@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: c38bae99d62821645b87c6c340794a5a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - LaceyDialogue-Start-0
+  - LaceyDialogue-Start-1
+  - LaceyDialogue-Start-2
+  - LaceyDialogue-Start-3
+  - LaceyDialogue-Start-4
+  - LaceyDialogue-Start-5
+  - LaceyDialogue-Start-6
+  - LaceyDialogue-Start-7
+  - LaceyDialogue-Start-8
+  - LaceyDialogue-Start-9
+  - LaceyDialogue-Start-10
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: c38bae99d62821645b87c6c340794a5a,
+    type: 3}
+  localizations: []

@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: 8d7900d7b4371ed468c05e0057e8ac39
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - ToadHopperDialogue-Start-0
+  - ToadHopperDialogue-Start-1
+  - ToadHopperDialogue-Start-2
+  - ToadHopperDialogue-Start-3
+  - ToadHopperDialogue-Start-4
+  - ToadHopperDialogue-Start-5
+  - ToadHopperDialogue-Start-6
+  - ToadHopperDialogue-Start-7
+  - ToadHopperDialogue-Start-8
+  - ToadHopperDialogue-Start-9
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 8d7900d7b4371ed468c05e0057e8ac39,
+    type: 3}
+  localizations: []
