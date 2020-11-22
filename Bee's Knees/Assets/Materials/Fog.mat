@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FogPlane
+  m_Name: Fog
   m_Shader: {fileID: 4800000, guid: 8c8f0e2cb54e85042a25d94710799e06, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -70,10 +70,10 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Strength: 2.08
+    - _Strength: 0.35
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Tint: {r: 0.01672636, g: 0.00827696, b: 0.01886791, a: 1}
+    - _Tint: {r: 0, g: 0, b: 0, a: 0.5}
