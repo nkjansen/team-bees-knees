@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: a938bef0ff5472e4784f5c946efd650c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - SueJaneTest1-SueJane-0
+  - SueJaneTest1-SueJane-1
+  - SueJaneTest1-SueJane-2
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

@@ -45,6 +45,8 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         #region Initial currentChar value
         if (EubieObject.activeSelf == true)
         {
@@ -66,7 +68,9 @@ public class ThirdPersonMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
+
         if (isInDialogue) return;
         //Debug.Log("onGround: " + IsGrounded());
         OnGround();
