@@ -8,10 +8,12 @@ public class SceneChange : MonoBehaviour
     [SerializeField]
     public Animator animator;
     private int LevelToLoad;
+    [SerializeField]
+    public string Scene;
     
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(Scene);
     }
 
     public void FadeToLevel(int levelIndex)
