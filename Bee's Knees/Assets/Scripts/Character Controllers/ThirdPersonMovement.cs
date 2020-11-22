@@ -233,6 +233,11 @@ public class ThirdPersonMovement : MonoBehaviour
         //return onGround;
     }
 
+    public void OnDialogueEnd()
+    {
+        isInDialogue = false;
+    }
+
     void Interact()
     {
         // Check input
@@ -243,7 +248,7 @@ public class ThirdPersonMovement : MonoBehaviour
             {
                 // Start dialog
                 isInDialogue = true;
-                DialogUI.Instance.Show();
+                DialogUI.Instance.dialogueRunner.StartDialogue(NPC.ActiveNPC.YarnStartNode);
             }
         }
     }
